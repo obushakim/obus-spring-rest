@@ -1,0 +1,63 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://obus.org/test/obus-spring-ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://obus.org/test/obus-spring-ws" targetNamespace="http://obus.org/test/obus-spring-ws">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified" targetNamespace="http://obus.org/test/obus-spring-ws">
+			<xs:element name="getKaryawanRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="id" type="xs:int" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getKaryawanResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="karyawanInfo" type="tns:karyawanInfo" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="karyawanInfo">
+				<xs:sequence>
+					<xs:element name="id" type="xs:int" />
+					<xs:element name="name" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getKaryawanResponse">
+		<wsdl:part element="tns:getKaryawanResponse" name="getKaryawanResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getKaryawanRequest">
+		<wsdl:part element="tns:getKaryawanRequest" name="getKaryawanRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="KaryawanPort">
+		<wsdl:operation name="getKaryawan">
+			<wsdl:input message="tns:getKaryawanRequest" name="getKaryawanRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getKaryawanResponse" name="getKaryawanResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="KaryawanPortSoap11" type="tns:KaryawanPort">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getKaryawan">
+			<soap:operation soapAction="" />
+			<wsdl:input name="getKaryawanRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getKaryawanResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="KaryawanPortService">
+		<wsdl:port binding="tns:KaryawanPortSoap11" name="KaryawanPortSoap11">
+			<soap:address location="http://localhost:6969/obus" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

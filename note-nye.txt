@@ -1,0 +1,3 @@
+LIST API :
+	-karyawan : 
+		GET : http://localhost:9696/obus-test/karyawan/1
