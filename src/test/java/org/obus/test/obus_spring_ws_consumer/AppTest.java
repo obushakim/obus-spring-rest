@@ -1,5 +1,11 @@
 package org.obus.test.obus_spring_ws_consumer;
 
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+import org.obus.test.obus_spring_ws_consumer.controller.KaryawanControllerDuaTest;
+import org.obus.test.obus_spring_ws_consumer.controller.KaryawanControllerTest;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -7,6 +13,11 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
+@RunWith(Suite.class)
+@SuiteClasses({
+	KaryawanControllerTest.class,
+	KaryawanControllerDuaTest.class
+})
 public class AppTest 
     extends TestCase
 {

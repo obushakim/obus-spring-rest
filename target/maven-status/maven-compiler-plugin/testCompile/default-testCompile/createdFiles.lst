@@ -1,1 +1,4 @@
+org\obus\test\obus_spring_ws_consumer\TestRunner.class
 org\obus\test\obus_spring_ws_consumer\AppTest.class
+org\obus\test\obus_spring_ws_consumer\controller\KaryawanControllerDuaTest.class
+org\obus\test\obus_spring_ws_consumer\controller\KaryawanControllerTest.class
