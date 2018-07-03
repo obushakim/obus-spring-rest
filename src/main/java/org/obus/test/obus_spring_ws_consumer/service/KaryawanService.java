@@ -55,4 +55,10 @@ public class KaryawanService implements IKaryawanService {
 		return result;
 	}
 
+	@Override
+	public int kali(int a, int b) {
+		// TODO Auto-generated method stub
+		return a * b;
+	}
+
 }

@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+
+   <!-- A bean definition with lazy init set on -->
+   <bean id = "karyawanClient" 
+     class = "org.obus.test.obus_spring_ws_consumer.ws_client.KaryawanClient"
+     lazy-init = "true">
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+
+	<bean id="karyawanControllerTest" 
+             class="org.obus.test.obus_spring_ws_consumer.controller.KaryawanControllerTest">
+  		<property name="karyawanService" ref="karyawanService"/>
+	</bean>
+	
+	   <!-- A simple bean definition -->
+   <bean id = "karyawanService" 
+     class="org.obus.test.obus_spring_ws_consumer.service.KaryawanService"/>
+      
+</beans>

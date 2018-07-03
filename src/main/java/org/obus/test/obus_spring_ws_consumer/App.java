@@ -48,7 +48,7 @@ public class App {
 	}
 	
 	@Bean
-	GetKaryawanResponse getJing(KaryawanClient client) {
+	GetKaryawanResponse getKaryawanResponse(KaryawanClient client) {
 		System.out.println("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999");
 		GetKaryawanResponse response = client.getKaryawan(1);
 		System.out.println("nama" + response.getKaryawanInfo().getName());
